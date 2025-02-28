@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ruslan-sedziukh/md-parser": "^0.0.7",
-    "@ruslan-sedziukh/md-render": "^0.0.2",
+    "@ruslan-sedziukh/md-render": "^0.0.4",
     "next": "15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
