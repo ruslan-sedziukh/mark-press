@@ -4,4 +4,4 @@
 
 ### H3 heading 
 
-Some text with the image - ![alt text](../next.svg)
+Some text with the image - ![alt text](./assets/vercel.svg)

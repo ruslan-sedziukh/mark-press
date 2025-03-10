@@ -1,12 +1,12 @@
-import { parseMarkdown } from '@ruslan-sedziukh/md-parser'
-import Markdown from '@ruslan-sedziukh/md-render'
+import { redirect } from 'next/navigation'
+import { documents } from './[documentName]/documents'
 
 export default function Home() {
-  const parsedMarkdown = parseMarkdown('./public/md/[0]First document.md')
+  redirect(documents[0].name)
 
   return (
     <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Markdown parsedMarkdown={parsedMarkdown} />
+      Not found
     </div>
   )
 }
