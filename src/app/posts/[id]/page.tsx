@@ -5,11 +5,11 @@ import { posts } from './posts'
 export default async function Page({
   params,
 }: {
-  params: Promise<{ post: string }>
+  params: Promise<{ id: string }>
 }) {
-  const postParam = (await params).post.replace(/%20/g, ' ')
+  const paramId = (await params).id
 
-  const postPath = posts.find((post) => post.id === postParam)
+  const postPath = posts.find((post) => post.id === paramId)
 
   if (!postPath) {
     return <div>Not found</div>
@@ -19,7 +19,7 @@ export default async function Page({
 
   return (
     <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Post post={postParam} parsedMarkdown={parsedMarkdown} />
+      <Post post={paramId} parsedMarkdown={parsedMarkdown} />
     </div>
   )
 }
