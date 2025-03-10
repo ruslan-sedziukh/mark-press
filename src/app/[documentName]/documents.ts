@@ -1,17 +1,17 @@
 type Post = {
-  id: string
+  name: string
   title: string
   path: string
 }
 
-export const posts: Post[] = [
+export const documents: Post[] = [
   {
-    id: 'first-document',
+    name: 'first-document',
     title: 'First document',
     path: './public/md-documents/first-document/first-document.md',
   },
   {
-    id: 'second-document',
+    name: 'second-document',
     title: 'Second document',
     path: './public/md-documents/second-document/second-document.md',
   },

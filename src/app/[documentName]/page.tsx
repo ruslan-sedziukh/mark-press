@@ -1,15 +1,15 @@
 import { parseMarkdown } from '@ruslan-sedziukh/md-parser'
-import Post from './_components/Post'
-import { posts } from './posts'
+import Document from './_components/Document'
+import { documents } from './documents'
 
 export default async function Page({
   params,
 }: {
-  params: Promise<{ id: string }>
+  params: Promise<{ documentName: string }>
 }) {
-  const paramId = (await params).id
+  const documentName = (await params).documentName
 
-  const postPath = posts.find((post) => post.id === paramId)
+  const postPath = documents.find((document) => document.name === documentName)
 
   if (!postPath) {
     return <div>Not found</div>
@@ -19,7 +19,7 @@ export default async function Page({
 
   return (
     <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Post post={paramId} parsedMarkdown={parsedMarkdown} />
+      <Document post={documentName} parsedMarkdown={parsedMarkdown} />
     </div>
   )
 }

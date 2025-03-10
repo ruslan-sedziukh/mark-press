@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { posts } from './posts'
+import { documents } from './documents'
 import Link from 'next/link'
 
 export default async function Layout({
@@ -7,17 +7,17 @@ export default async function Layout({
   params,
 }: Readonly<{
   children: ReactNode
-  params: Promise<{ id: string }>
+  params: Promise<{ documentName: string }>
 }>) {
-  const postId = (await params).id
+  const documentName = (await params).documentName
 
-  const links = posts.map((post) => (
-    <li key={post.id}>
+  const links = documents.map((document) => (
+    <li key={document.name}>
       <Link
-        href={post.id}
-        className={postId === post.id ? 'text-purple-500' : ''}
+        href={document.name}
+        className={documentName === document.name ? 'text-purple-500' : ''}
       >
-        {post.title}
+        {document.title}
       </Link>
     </li>
   ))

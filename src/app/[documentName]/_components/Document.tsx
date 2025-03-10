@@ -10,7 +10,7 @@ type Props = {
   post: string
 }
 
-const Post = ({ parsedMarkdown, post }: Props) => {
+const Document = ({ parsedMarkdown, post }: Props) => {
   return (
     <MarkdownProvider post={post}>
       <Markdown parsedMarkdown={parsedMarkdown} components={{ img: Image }} />
@@ -18,4 +18,4 @@ const Post = ({ parsedMarkdown, post }: Props) => {
   )
 }
 
-export default Post
+export default Document
