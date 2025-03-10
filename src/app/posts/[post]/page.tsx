@@ -1,25 +1,25 @@
 import { parseMarkdown } from '@ruslan-sedziukh/md-parser'
 import Post from './_components/Post'
-import { getMdList } from './_utils/getMdList'
+import { posts } from './posts'
 
 export default async function Page({
   params,
 }: {
   params: Promise<{ post: string }>
 }) {
-  const post = (await params).post.replace(/%20/g, ' ')
+  const postParam = (await params).post.replace(/%20/g, ' ')
 
-  const parsedMarkdown = parseMarkdown(
-    `./public/md-documents/${post}/${post}.md`
-  )
+  const postPath = posts.find((post) => post.id === postParam)
 
-  const mdDocuments = await getMdList('./public/md-documents/')
+  if (!postPath) {
+    return <div>Not found</div>
+  }
 
-  console.log('>>> mdDocuments:', mdDocuments)
+  const parsedMarkdown = parseMarkdown(postPath.path)
 
   return (
     <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Post post={post} parsedMarkdown={parsedMarkdown} />
+      <Post post={postParam} parsedMarkdown={parsedMarkdown} />
     </div>
   )
 }
