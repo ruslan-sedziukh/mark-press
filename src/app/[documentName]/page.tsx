@@ -1,8 +1,8 @@
 import { parseMarkdownFile } from '@ruslan-sedziukh/md-parser'
-import Document from './_components/Document'
 import { documents } from './documents'
 import path from 'path'
 import { MD_DOCUMENTS_PATH } from '@/utils'
+import { Markdown } from '@ruslan-sedziukh/md-render'
 
 const DOCUMENTS_FOLDER = path.join(process.cwd(), 'public', MD_DOCUMENTS_PATH)
 
@@ -31,7 +31,7 @@ export default async function Page({
 
   return (
     <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Document post={documentName} parsedMarkdown={parsedMarkdown} />
+      <Markdown parsedMarkdown={parsedMarkdown} />
     </div>
   )
 }
