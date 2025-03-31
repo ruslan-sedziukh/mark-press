@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@ruslan-sedziukh/md-parser": "^0.0.9",
+    "@ruslan-sedziukh/md-parser": "^0.0.10",
     "@ruslan-sedziukh/md-render": "^0.0.9",
     "@ruslan-sedziukh/md-types": "^0.0.7",
     "next": "15.2.0",
