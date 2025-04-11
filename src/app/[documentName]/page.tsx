@@ -30,7 +30,7 @@ export default async function Page({
   })
 
   return (
-    <div className="min-h-screen flex flex-col px-8 pb-20 gap-2 font-[family-name:var(--font-geist-sans)]">
+    <div className="w-full flex flex-col px-8 gap-2 font-[family-name:var(--font-geist-sans)]">
       <Markdown parsedMarkdown={parsedMarkdown} />
     </div>
   )

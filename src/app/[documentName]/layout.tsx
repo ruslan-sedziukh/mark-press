@@ -15,7 +15,7 @@ export default async function Layout({
     <li key={document.name}>
       <Link
         href={document.name}
-        className={documentName === document.name ? 'text-purple-500' : ''}
+        className={documentName === document.name ? 'text-pink-400' : ''}
       >
         {document.title}
       </Link>
@@ -23,12 +23,14 @@ export default async function Layout({
   ))
 
   return (
-    <div className="bg-slate-300 p-4 w-full h-full flex">
-      <div className="border-r-2 pr-4">
-        <ul>{links}</ul>
-      </div>
+    <div className="h-full min-h-screen px-4 bg-neutral-50 w-full flex justify-center">
+      <div className="flex py-4 w-full lg:w-[1024px]">
+        <div className="border-r-1 pr-4 border-gray-300 w-55">
+          <ul>{links}</ul>
+        </div>
 
-      <div>{children}</div>
+        {children}
+      </div>
     </div>
   )
 }

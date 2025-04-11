@@ -12,4 +12,8 @@ export const documents: Post[] = [
     name: 'second-document',
     title: 'Second document',
   },
+  {
+    name: 'third-document',
+    title: 'Third document',
+  },
 ]
