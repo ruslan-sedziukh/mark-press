@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { documents } from './documents'
 import Link from 'next/link'
+import Sidebar from './_components/Sibebar'
 
 export default async function Layout({
   children,
@@ -25,9 +26,9 @@ export default async function Layout({
   return (
     <div className="h-full min-h-screen px-4 bg-neutral-50 w-full flex justify-center">
       <div className="flex py-4 w-full lg:w-[1024px]">
-        <div className="border-r-1 pr-4 border-gray-300 w-55">
+        <Sidebar>
           <ul>{links}</ul>
-        </div>
+        </Sidebar>
 
         {children}
       </div>
