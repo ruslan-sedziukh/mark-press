@@ -1,9 +1,3 @@
-/**
- *  Style is provided here to include var with color in css bundle.
- *
- * border-gray-600
- */
-
 import CloseIcon from '../CloseIcon'
 import KebabIcon from '../KebabIcon'
 
@@ -17,7 +11,7 @@ const Button = ({ onClick, open }: Props) => {
     <button
       className={`
           rounded-[50%] fixed bottom-1 left-[50%] w-14 h-14 bg-white 
-          shadow-[0px_0px_10px_var(--color-gray-300)] 
+          shadow-[0px_0px_5px_var(--color-gray-300)] 
           border-solid border-gray-200 border-0 p-4
           flex justify-center content-center flex-wrap
           cursor-pointer
