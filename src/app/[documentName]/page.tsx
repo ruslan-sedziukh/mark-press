@@ -1,13 +1,22 @@
-import { MD_DOCUMENTS_PATH, MD_DOCUMENTS_FOLDER } from '@/utils'
+import path from 'path'
+import { DOCUMENTS } from '../documents'
+import { MD_DOCUMENTS_FOLDER, MD_DOCUMENTS_PATH } from '@/utils'
 import { parseMarkdownFile } from '@ruslan-sedziukh/md-parser'
 import { Markdown } from '@ruslan-sedziukh/md-render'
-import path from 'path'
 
-type Props = {
-  documentName: string
-}
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ documentName: string }>
+}) {
+  const documentName = (await params).documentName
 
-const MarkdownPage = ({ documentName }: Props) => {
+  const document = DOCUMENTS.find((doc) => doc.name === documentName)
+
+  if (!document?.name) {
+    return <div>Not found</div>
+  }
+
   const documentPath = path.join(
     MD_DOCUMENTS_PATH,
     documentName,
@@ -24,5 +33,3 @@ const MarkdownPage = ({ documentName }: Props) => {
     </div>
   )
 }
-
-export default MarkdownPage
