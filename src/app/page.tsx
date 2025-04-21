@@ -1,12 +1,12 @@
 import { redirect } from 'next/navigation'
-import { documents } from './[documentName]/documents'
+import { DOCUMENTS } from './documents'
 
-export default function Home() {
-  redirect(documents[0].name)
+const Page = () => {
+  if (!DOCUMENTS.length) {
+    return <div>There are no documents yet.</div>
+  }
 
-  return (
-    <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      Not found
-    </div>
-  )
+  redirect(DOCUMENTS[0].name)
 }
+
+export default Page

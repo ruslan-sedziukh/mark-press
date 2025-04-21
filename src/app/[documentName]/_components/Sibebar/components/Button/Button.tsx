@@ -2,11 +2,11 @@ import CloseIcon from '../CloseIcon'
 import KebabIcon from '../KebabIcon'
 
 type Props = {
-  open: boolean
+  type: 'kebab' | 'close'
   onClick: () => void
 }
 
-const Button = ({ onClick, open }: Props) => {
+const Button = ({ onClick, type }: Props) => {
   return (
     <button
       className={`
@@ -18,7 +18,7 @@ const Button = ({ onClick, open }: Props) => {
         `}
       onClick={onClick}
     >
-      {open ? <CloseIcon /> : <KebabIcon />}
+      {type === 'close' ? <CloseIcon /> : <KebabIcon />}
     </button>
   )
 }
