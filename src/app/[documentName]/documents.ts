@@ -3,17 +3,4 @@ type Post = {
   title: string
 }
 
-export const documents: Post[] = [
-  {
-    name: 'first-document',
-    title: 'First document',
-  },
-  {
-    name: 'second-document',
-    title: 'Second document',
-  },
-  {
-    name: 'third-document',
-    title: 'Third document',
-  },
-]
+export const documents: Post[] = []
