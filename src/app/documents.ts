@@ -13,5 +13,3 @@ export const DOCUMENTS: Document[] = [
     title: 'Second document',
   },
 ]
-
-export const ROOT_DOCUMENT_NAME = 'first-document'
