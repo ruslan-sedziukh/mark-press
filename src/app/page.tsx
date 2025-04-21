@@ -1,12 +1,15 @@
 import { redirect } from 'next/navigation'
-import { documents } from './[documentName]/documents'
+import { DOCUMENTS, ROOT_DOCUMENT_NAME } from './documents'
+import MarkdownPage from '@/components/MarkdownPage/MarkdownPage'
 
 export default function Home() {
-  redirect(documents[0].name)
+  if (!ROOT_DOCUMENT_NAME) {
+    if (DOCUMENTS[0]?.name) {
+      redirect(DOCUMENTS[0]?.name)
+    } else {
+      return <></>
+    }
+  }
 
-  return (
-    <div className="min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      Not found
-    </div>
-  )
+  return <MarkdownPage documentName={ROOT_DOCUMENT_NAME} />
 }
