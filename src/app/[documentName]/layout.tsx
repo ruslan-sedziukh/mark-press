@@ -25,7 +25,7 @@ export default async function Layout({
 
   return (
     <>
-      <Sidebar key={documentName || ''}>
+      <Sidebar key={documentName}>
         <ul>{links}</ul>
       </Sidebar>
 
