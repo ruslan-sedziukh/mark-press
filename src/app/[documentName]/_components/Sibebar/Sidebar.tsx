@@ -22,7 +22,10 @@ const Sidebar = ({ children }: Props) => {
       <div className="sm:hidden">
         {isOpen && <ModalContent>{children}</ModalContent>}
 
-        <Button open={isOpen} onClick={() => toggleIsOpen()} />
+        <Button
+          type={isOpen ? 'close' : 'kebab'}
+          onClick={() => toggleIsOpen()}
+        />
       </div>
     </>
   )
