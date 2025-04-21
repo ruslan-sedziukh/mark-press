@@ -24,8 +24,8 @@ export default async function Layout({
   ))
 
   return (
-    <div className="h-full min-h-screen px-4 bg-neutral-50 w-full flex justify-center">
-      <div className="flex py-4 w-full lg:w-[1024px]">
+    <div className="h-full min-h-screen p-4 max-sm:pb-20 bg-neutral-50 w-full flex justify-center">
+      <div className="flex w-full lg:w-[1024px]">
         <Sidebar>
           <ul>{links}</ul>
         </Sidebar>

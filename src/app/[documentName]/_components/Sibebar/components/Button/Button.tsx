@@ -10,7 +10,7 @@ const Button = ({ onClick, open }: Props) => {
   return (
     <button
       className={`
-          rounded-[50%] fixed bottom-1 left-[50%] w-14 h-14 bg-white 
+          rounded-[50%] fixed bottom-4 left-[50%] w-12 h-12 bg-white 
           shadow-[0px_0px_5px_var(--color-gray-300)] 
           border-solid border-gray-200 border-0 p-4
           flex justify-center content-center flex-wrap
