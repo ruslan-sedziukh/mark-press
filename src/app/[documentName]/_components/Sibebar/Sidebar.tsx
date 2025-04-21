@@ -2,6 +2,7 @@
 
 import { ReactNode, useState } from 'react'
 import Button from './components/Button'
+import ModalContent from './components/ModalContent'
 
 type Props = {
   children: ReactNode
@@ -19,7 +20,7 @@ const Sidebar = ({ children }: Props) => {
       </div>
 
       <div className="sm:hidden">
-        {isOpen && 'open'}
+        {isOpen && <ModalContent>{children}</ModalContent>}
 
         <Button open={isOpen} onClick={() => toggleIsOpen()} />
       </div>

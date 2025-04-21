@@ -25,7 +25,7 @@ export default async function Layout({
 
   return (
     <div className="h-full min-h-screen p-4 max-sm:pb-20 bg-neutral-50 w-full flex justify-center">
-      <div className="flex w-full lg:w-[1024px]">
+      <div className="flex w-full lg:w-[1024px] sm:gap-4">
         <Sidebar>
           <ul>{links}</ul>
         </Sidebar>
