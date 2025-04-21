@@ -3,13 +3,4 @@ type Document = {
   title: string
 }
 
-export const DOCUMENTS: Document[] = [
-  {
-    name: 'first-document',
-    title: 'First document',
-  },
-  {
-    name: 'second-document',
-    title: 'Second document',
-  },
-]
+export const DOCUMENTS: Document[] = []
