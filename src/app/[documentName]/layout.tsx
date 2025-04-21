@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { documents } from './documents'
 import Link from 'next/link'
+import Sidebar from './_components/Sibebar'
 
 export default async function Layout({
   children,
@@ -15,7 +16,7 @@ export default async function Layout({
     <li key={document.name}>
       <Link
         href={document.name}
-        className={documentName === document.name ? 'text-purple-500' : ''}
+        className={documentName === document.name ? 'text-pink-400' : ''}
       >
         {document.title}
       </Link>
@@ -23,12 +24,14 @@ export default async function Layout({
   ))
 
   return (
-    <div className="bg-slate-300 p-4 w-full h-full flex">
-      <div className="border-r-2 pr-4">
-        <ul>{links}</ul>
-      </div>
+    <div className="h-full min-h-screen p-4 max-sm:pb-20 bg-neutral-50 w-full flex justify-center">
+      <div className="flex w-full lg:w-[1024px] sm:gap-4">
+        <Sidebar key={documentName}>
+          <ul>{links}</ul>
+        </Sidebar>
 
-      <div>{children}</div>
+        {children}
+      </div>
     </div>
   )
 }
